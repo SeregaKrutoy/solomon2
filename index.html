@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Соломон — ИИ-помощник судьи</title>
+    <meta
+      name="description"
+      content="Соломон — ИИ-помощник судьи: распознавание судебных актов и структурированный анализ дела."
+    />
+  </head>
+  <body>
+    <script>
+      // Тема применяется до отрисовки, чтобы не было вспышки светлого фона.
+      (function () {
+        try {
+          var saved = localStorage.getItem("solomon-theme");
+          var dark =
+            saved === "dark" ||
+            (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {}
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
